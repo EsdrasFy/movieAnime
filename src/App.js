@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
+import RequestAnimes from './components/RequestAnimes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Ad from './components/Ad';
 
+import { SearchContext} from './components/contexts/SearchContext';
+import RandomAnimes from './components/RandomAnimes';
+// Math.random()
 function App() {
+  const { showAd, setShowAd } = useContext(SearchContext);
+  const toggleAd = () => {
+    setShowAd(!showAd);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {showAd && <Ad showCloseAd={toggleAd} />}
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<RequestAnimes />} />
+          <Route path="/random" element={<RandomAnimes/>} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
+export default App ;

@@ -1,0 +1,20 @@
+.loading {
+  margin: 200px auto;
+  display: block;
+  width: 6em; /* Use uma unidade relativa, como em, para definir as dimensões */
+  height: 6em; /* Use a mesma unidade relativa para manter proporções */
+  background-color: transparent;
+  border: 1em solid orangered; /* Use uma unidade relativa para a borda */
+  border-right: 1em solid transparent; /* Use a mesma unidade relativa para a borda */
+  border-radius: 50%;
+  animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
