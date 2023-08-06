@@ -1,13 +1,17 @@
-import Ep from '../../images/opc2.jpg';
+
 import './index.css';
+import { useNavigate } from 'react-router-dom';
 function CardEpi({ imgEp, title, episodeo, id }) {
   const cardStyle = {
     width: '130px',
     minHeight: '74px',
     background: `url(${imgEp}) no-repeat `,
     backgroundSize: 'cover',
-    // Adicione outros estilos, como borda, sombra etc. conforme necessário
   };
+  const navigate = useNavigate()
+  const showInfoAnimes = () =>{
+    navigate(`/anime/${id}`)
+  }
   return (
     <div className="CardEp" id={id}>
       <div className="imageEp" style={cardStyle}>
@@ -20,7 +24,7 @@ function CardEpi({ imgEp, title, episodeo, id }) {
         {title}...
       </h1>
       <div className="episode">
-        <b>ASSISTIR</b>
+        <button onClick={showInfoAnimes}>VER MAIS</button>
       </div>
     </div>
   );

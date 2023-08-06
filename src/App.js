@@ -9,6 +9,7 @@ import Ad from './components/Ad';
 
 import { SearchContext} from './components/contexts/SearchContext';
 import RandomAnimes from './components/RandomAnimes';
+import InfoAnime from './components/InfoAnime';
 // Math.random()
 function App() {
   const { showAd, setShowAd } = useContext(SearchContext);
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<RequestAnimes />} />
           <Route path="/random" element={<RandomAnimes/>} />
+         <Route path="/anime/:id" element={<InfoAnime />} />
         </Routes>
         <Footer />
       </div>
