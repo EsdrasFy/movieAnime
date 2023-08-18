@@ -39,7 +39,6 @@ function Header() {
   const handleMenuToggle = () => {
     setShowMenu(!showMenu);
   };
-  const number = 1;
   const toRandom = () => {
     navigate(`/random`)
   }

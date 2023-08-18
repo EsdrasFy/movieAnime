@@ -1,30 +1,23 @@
-.dispFlex{
+.dispFlex {
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: rgb(204, 204, 204);
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 30px;
   width: 100%;
+  max-height: 530px;
+  padding: 0 10px;
 }
 
-.dispFlex1{
-  gap: 10px;
-  justify-content: space-evenly;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-}
 .leftSide{
   max-width: 270px; 
   min-width: 290px;
-  min-height: 500px;
+  min-height: 530px;
   height: 100%;
-  max-height: 708px;
   display: flex;
+  padding: 8px;
   flex-direction: column;
-  padding: 12px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.54);
   border-left: 3px solid orangered ;
@@ -33,17 +26,24 @@
   border-bottom: 3px solid gray;
 }
 .logoLeftSide{
-  min-height: 300px;
+  min-height: 295px;
   width: 100%;
   background-size: cover !important;
   border-radius: 10px;
 }
 .titleLeftSide {
-  padding: 14px;
+  padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   position: relative;
   border: none;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
 }
 
 .titleLeftSide::before {
@@ -52,7 +52,7 @@
   bottom: 0;
   left: 0;
   width: 50%;
-  height: 3px;
+  height: 2px;
   background-color: orangered; 
 }
 
@@ -62,7 +62,7 @@
   bottom: 0;
   right: 0;
   width: 50%;
-  height: 3px;
+  height: 2px;
   background-color: gray;
 }
 .leftSynopse{
@@ -93,41 +93,20 @@
   background-color: gray;
 }
 .rigthSide{
-  max-width: 250px;
-  min-width: 250px;;
-  width: 100%;
   display: flex;
   flex-direction: column;
   color: rgb(204, 204, 204);
-}
-.rigthSide > div{
-  gap: 20px;
-  display: flex;  
- justify-content: center;
- align-items: center;
-}
-.moreInfos,.allInfos,.informationBlock > div{
-  background-color: rgba(0, 0, 0, 0.54);
   border-radius: 10px;
-  padding: 12px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-
+  background-color: rgba(0, 0, 0, 0.54);
   border-left: 3px solid orangered ;
   border-top: 3px solid orangered;
   border-right: 3px solid gray ;
   border-bottom: 3px solid gray;
+  min-height: 530px;
+  max-height: 530px;
 }
 .moreInfos{
   padding: 0 !important;
-}
-.moreInfos iframe{
-  border-radius: 10px;
-  width: 100%;
-  height: 238px;
 }
 .informationBlock{
   gap: 10px;
@@ -137,13 +116,13 @@
   width: 100%;
 }
 .informationBlock > div{
-  min-width: 291.406px;
-  min-height: 238.438px;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
   text-align: left;
+  margin-top: 20px;
 }
 .informationBlock > div > p{
   display: flex;
@@ -152,9 +131,47 @@
   width: 100%;
   font-weight: 700;
 }
+.informationBlock > div > a{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  font-weight: 700;
+}
 .informationBlock > div > p > b{
   color: orangered;
   margin-left: 5px;
+}
+.informationBlock > div > p > a{
+  color: orangered;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  position: relative;
+}
+.informationBlock > div > p > a::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 50%;
+  height: 2px; 
+  background-color: gray;
+}
+.informationBlock > div > p > a::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 50%;
+  height: 2px; 
+  background-color: orangered;
+}
+.informationBlock > div p:last-child{
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
 }
 .moreInfos{
   min-width: 291.406px !important;
@@ -162,39 +179,62 @@
   width: 100%;
 }
 .allInfos{
-  max-width: 720px;
+  padding: 8px;
+  overflow-y: hidden;
   width: 100%;
-  min-height: 401.771px;
-  max-height: 401px;
-  overflow-y: scroll;
-  padding-top: 20px;
-  width: 100%;
-  margin-left: 5px;  
-  margin-top: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  color: rgb(204, 204, 204);
 }
-.allInfos::-webkit-scrollbar {
+.allInfos h1{
+  position: relative;
+  border: none;
+  padding-bottom: 15px;
+  width: 100%;
+  justify-content: center;
+}
+.allInfos h1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px; 
+  background-color: orangered;
+}
+
+.allInfos h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 2px; 
+  background-color: gray;
+}
+.allInfos p{
+  width: 100%;
+  color: rgb(204, 204, 204);
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+.allInfos p::-webkit-scrollbar {
   width: 4px; 
  margin-right: 5px;
   background-color: #212529;
 }
 
-.allInfos::-webkit-scrollbar-thumb {
+.allInfos p ::-webkit-scrollbar-thumb {
   background: linear-gradient(87deg, rgb(250, 129, 4) 0px, rgb(187, 41, 20) 100%) !important;;
   border-radius: 4px;
   max-height: 200px;
 }
-@media (max-width: 600px){
+@media (max-width: 630px){
   .dispFlex{
     flex-direction: column;
-    gap: 20px;
+    max-height: 100%;
   }
-  .allInfos{
-    margin-left:30px;
-    margin-right:30px;
+  .rigthSide{
     max-width: 290px;
   }
 }

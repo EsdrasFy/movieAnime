@@ -1,11 +1,11 @@
 .loading {
   margin: 200px auto;
   display: block;
-  width: 6em; /* Use uma unidade relativa, como em, para definir as dimensões */
-  height: 6em; /* Use a mesma unidade relativa para manter proporções */
+  width: 6em;
+  height: 6em;
   background-color: transparent;
-  border: 1em solid orangered; /* Use uma unidade relativa para a borda */
-  border-right: 1em solid transparent; /* Use a mesma unidade relativa para a borda */
+  border: 1em solid orangered;
+  border-right: 1em solid transparent;
   border-radius: 50%;
   animation: loading 1s ease-in-out infinite;
 }
